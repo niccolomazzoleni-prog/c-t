@@ -161,6 +161,8 @@
 .ctlp-form-sub{color:#4a4a4a;font-size:15px;margin-bottom:24px;}
 /* min-height riserva lo spazio verticale del widget di booking (Calendly/HubSpot), evita che la card appaia vuota mentre carica */
 .ctlp-form-embed{background:#fff;padding:20px;min-height:520px;}
+/* riduce proporzionalmente il form HubSpot (che vive in un iframe cross-origin, non stilizzabile nei singoli campi): zoom scala anche l'ingombro nel layout, non solo la resa visiva, quindi resta corretto anche quando HubSpot ricalcola l'altezza dinamicamente */
+.ctlp-form-embed .hs-form-frame{zoom:.85;}
 
 /* LOGOS - scorrimento infinito in CSS puro, replica la slider della reference senza dipendenze esterne */
 .ctlp-logos{background:#e8e8e3;padding-left:0;padding-right:0;}
