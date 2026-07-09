@@ -137,8 +137,9 @@
 .ctlp{font-family:'PT Sans',Arial,sans-serif;color:#2a2a2a;line-height:1.5;}
 .ctlp *{box-sizing:border-box;}
 .ctlp .ctlp-container{max-width:1320px;margin:0 auto;padding:0 32px;}
-.ctlp h1,.ctlp h2,.ctlp h3{font-family:'PT Sans',Arial,sans-serif;font-weight:700;margin:0 0 20px;}
-.ctlp p{margin:0 0 18px;}
+/* :where() azzera la specificita' di h1/h2/h3/p cosi' qualunque classe con un proprio margin (anche una singola classe) vince sempre, senza bisogno di selettori compound */
+.ctlp :where(h1,h2,h3){font-family:'PT Sans',Arial,sans-serif;font-weight:700;margin:0 0 20px;}
+.ctlp :where(p){margin:0 0 18px;}
 .ctlp section{padding:80px 0;}
 
 /* HERO - sfondo giallo come reference; loghi cliente riuniti qui dentro, in versione compatta, above the fold (stile abrarobotics.com) */
