@@ -148,9 +148,8 @@
 
 /* DETTAGLIO + FORM - due colonne, come contact-form-sec nella reference */
 .ctlp-detail-form{background:#fff;}
-/* form impilato sotto il testo (non più a fianco): un form lungo di natura non forzava piu' un'altezza di riga condivisa con la colonna testo, che lasciava spazio bianco sotto */
-.ctlp-detail-form-grid{display:block;}
-.ctlp-form-col{max-width:640px;margin:64px auto 0;}
+/* due colonne; align-items:center distribuisce il divario di altezza sopra+sotto il testo invece di scaricarlo tutto in fondo come spazio vuoto */
+.ctlp-detail-form-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:center;}
 .ctlp-h2{font-size:clamp(28px,3.2vw,38px);color:#2a2a2a;}
 .ctlp-body-text{font-size:18px;color:#2a2a2a;}
 .ctlp-roles-grid{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:16px 24px;}
@@ -163,7 +162,7 @@
 /* min-height riserva lo spazio verticale del widget di booking (Calendly/HubSpot), evita che la card appaia vuota mentre carica */
 .ctlp-form-embed{background:#fff;padding:12px;min-height:520px;}
 /* riduce proporzionalmente il form HubSpot (che vive in un iframe cross-origin, non stilizzabile nei singoli campi): zoom scala anche l'ingombro nel layout, non solo la resa visiva, quindi resta corretto anche quando HubSpot ricalcola l'altezza dinamicamente */
-.ctlp-form-embed .hs-form-frame{zoom:.85;}
+.ctlp-form-embed .hs-form-frame{zoom:.7;}
 
 /* LOGOS - scorrimento infinito in CSS puro, replica la slider della reference senza dipendenze esterne */
 .ctlp-logos{background:#e8e8e3;padding-left:0;padding-right:0;}
@@ -185,6 +184,7 @@
 .ctlp-final-cta-inner .ctlp-final-cta-text{font-size:clamp(28px,3.6vw,42px);line-height:1.2;font-weight:700;color:#fff;max-width:900px;margin:0 auto 64px;}
 
 @media (max-width:900px){
+  .ctlp-detail-form-grid{grid-template-columns:1fr;}
   .ctlp-stats-grid{grid-template-columns:1fr;gap:32px;}
 }
 @media (max-width:720px){
